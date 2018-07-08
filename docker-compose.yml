@@ -9,6 +9,7 @@ registry:
     - ./data:/var/lib/registry
     - ./certs:/certs
   environment:
+    - TZ: 'Asia/Shanghai'
     - VIRTUAL_HOST=harbor.wallbase.tv
     - VIRTUAL_PORT=443
     - VIRTUAL_PROTO=https

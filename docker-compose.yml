@@ -23,4 +23,4 @@ docker-registry-ui:
   links:
     - registry
   environment:
-    - REG1=http://registry:5000
+    - REG1=http://registry:5000/v2/

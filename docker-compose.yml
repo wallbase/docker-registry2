@@ -3,15 +3,13 @@ registry:
   image: registry:2
   restart: always
   ports:
-    - 5000:5000
-    - 443:443
+    - 443:5000
   volumes:
     - ./data:/var/lib/registry
     - ./certs:/certs
   environment:
     - TZ='Asia/Shanghai'
     - VIRTUAL_HOST=harbor.wallbase.tv
-    - VIRTUAL_PORT=443
     - VIRTUAL_PROTO=https
     - REGISTRY_HTTP_TLS_CERTIFICATE=/certs/wallbase.tv/fullchain.pem
     - REGISTRY_HTTP_TLS_KEY=/certs/wallbase.tv/privkey.pem

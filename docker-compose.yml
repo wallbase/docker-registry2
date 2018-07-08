@@ -1,5 +1,5 @@
 registry:
-  name: registry
+  container_name: registry
   image: registry:2
   restart: always
   ports:

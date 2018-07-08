@@ -3,7 +3,7 @@ registry:
   image: registry:2
   restart: always
   ports:
-    - 443:5000
+    - 5000:5000
   volumes:
     - ./config.yml:/etc/docker/registry/config.yml
     - ./data:/var/lib/registry
@@ -11,9 +11,9 @@ registry:
   environment:
     - TZ='Asia/Shanghai'
     - VIRTUAL_HOST=harbor.wallbase.tv
-    - VIRTUAL_PROTO=https
-    - REGISTRY_HTTP_TLS_CERTIFICATE=/certs/wallbase.tv/fullchain.pem
-    - REGISTRY_HTTP_TLS_KEY=/certs/wallbase.tv/privkey.pem
+#    - VIRTUAL_PROTO=https
+#    - REGISTRY_HTTP_TLS_CERTIFICATE=/certs/wallbase.tv/fullchain.pem
+#    - REGISTRY_HTTP_TLS_KEY=/certs/wallbase.tv/privkey.pem
 
 docker-registry-ui:
   restart: always
@@ -25,5 +25,4 @@ docker-registry-ui:
   environment:
     - ENV_DOCKER_REGISTRY_HOST=registry
     - ENV_DOCKER_REGISTRY_PORT=5000
-    - ENV_MODE_BROWSE_ONLY=true
 

@@ -15,3 +15,12 @@ registry:
     - REGISTRY_HTTP_TLS_CERTIFICATE=/certs/wallbase.tv/fullchain.pem
     - REGISTRY_HTTP_TLS_KEY=/certs/wallbase.tv/privkey.pem
 
+docker-registry-ui:
+  restart: always
+  image: atcol/docker-registry-ui
+  ports:
+    - "8080:8080"
+  links:
+    - registry
+  environment:
+    - REG1=http://registry:5000

@@ -6,16 +6,10 @@ registry:
   volumes:
     - ./data:/var/lib/registry
     - ./certs:/certs
-    - ./auth:/auth
   environment:
-    # nginx proxy docker config
-    - VIRTUAL_HOST=registry.domain.tld
+    - VIRTUAL_HOST=harbor.wallbase.tv
     - VIRTUAL_PORT=443
     - VIRTUAL_PROTO=https
+    - REGISTRY_HTTP_TLS_CERTIFICATE=/certs/wallbase.tv/fullchain.pem
+    - REGISTRY_HTTP_TLS_KEY=/certs/wallbase.tv/privkey.pem
 
-
-    - REGISTRY_HTTP_TLS_CERTIFICATE=/certs/registry.bundle.crt
-    - REGISTRY_HTTP_TLS_KEY=/certs/registry.key
-    - REGISTRY_AUTH=htpasswd
-    - REGISTRY_AUTH_HTPASSWD_REALM=Registry Realm
-    - REGISTRY_AUTH_HTPASSWD_PATH=/auth/htpasswd

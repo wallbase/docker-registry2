@@ -8,6 +8,6 @@ storage:
     maxthreads: 100
 http:
     addr: :5000
-proxy:
-  #remoteurl: https://registry-1.docker.io
-  remoteurl: https://plfmv1h0.mirror.aliyuncs.com
+#proxy:
+#  #remoteurl: https://registry-1.docker.io
+#  remoteurl: https://plfmv1h0.mirror.aliyuncs.com

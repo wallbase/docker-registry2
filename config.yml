@@ -2,6 +2,10 @@ version: 0.1
 log:
   fields:
     service: registry
+storage:
+  filesystem:
+    rootdirectory: /var/lib/registry
+    maxthreads: 100
 http:
     addr: :5000
 proxy:

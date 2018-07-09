@@ -1,0 +1,14 @@
+version: 0.1
+log:
+  fields:
+    service: registry
+storage:
+  filesystem:
+    rootdirectory: /var/lib/registry
+    maxthreads: 100
+http:
+    addr: :5000
+proxy:
+  #remoteurl: https://plfmv1h0.mirror.aliyuncs.com
+  remoteurl: https://registry.wallbase.tv
+

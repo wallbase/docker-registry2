@@ -17,3 +17,7 @@ common/config/registry/config.yml
 proxy:
   #remoteurl: https://registry-1.docker.io
   remoteurl: https://plfmv1h0.mirror.aliyuncs.com
+
+
+
+harbor.wallbase.tv/kubernetes-ingress-controller/nginx-ingress-controller:0.15.0

@@ -1,0 +1,27 @@
+gotty:
+  image: dit4c/gotty
+  container_name: gotty
+  environment:
+    TZ: 'Asia/Shanghai'
+  volumes:
+    - /data/Logs:/data/Logs
+  ports:
+    - '5080:8080'
+trackr-app-ui:
+      container_name: trackr-app-ui
+      image: 'wallbase/trackr-ads-app:latest'
+      environment:
+        TZ: 'Asia/Shanghai'
+      ports:
+        - '3090:80'
+trackr-web:
+  container_name: trackr-web
+  image: 'wallbase/trackr-ads-web:latest'
+  restart: 'always'
+  environment:
+    SPRING_PROFILES_ACTIVE: dev
+    TZ: 'Asia/Shanghai'
+  volumes:
+    - /data/Logs:/data/Logs
+  ports:
+    - '1090:8080'
